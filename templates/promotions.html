@@ -1,0 +1,31 @@
+﻿{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+	<title>Акції</title>
+{% endblock %}
+
+{% block background %}
+<div class="banner" id="p"><img src="{% static 'img/4.jpg' %}"></div>
+{% endblock %}
+
+{% block content %}
+<div class="content" id="img">
+	<h1>Знижки та акції</h1>
+	<h3><p> Пропонуємо Вам скористатися акціями нашої доставки, які ми розробили спеціально для наших шановних клієнтів.</h3></p>
+	<p><table>
+    {% for prom in prom_list %}
+		<tr><td rowspan="4"><img src="{{ prom.image.url}}" alt="" class="scale"></td>
+            <th> <font color="#FFDEAD" size="5">Акція: {{ prom.name }}</font></th></tr>
+        <tr><td><font color="#FFDEAD" size="4"> {{ prom.title }}</font></td></tr>
+			<tr><td><form>
+<input type="button" class="floating-button" value="Детальніше" onClick="alert('{{ prom.description }}')">
+</form> </td></tr>
+        <tr><td><font color="#FFDEAD"> {{ prom.end }}</font></td></tr>
+    {% endfor %}
+</table></p>
+
+</div>
+
+{% endblock %}

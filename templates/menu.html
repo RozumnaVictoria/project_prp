@@ -1,0 +1,52 @@
+﻿{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+    <title>Меню</title>
+{% endblock %}
+
+{% block background %}
+    <div class="banner" id="p"><img src="{% static 'img/5.jpg' %}"></div>
+{% endblock %}
+
+{% block content %}
+    <div class="content">
+        {% for product in product_list %}
+            <h1> {{ product.name }} </h1>
+            <p>{{ product.description }}</p>
+            {% with product.RelProduct.all as product_item %}
+                {% for item in product_item %}
+                    <p>
+                    <table>
+                        <tr>
+                            <td rowspan="6"><img src="{{ item.image.url }}" alt="" class="scale"></td>
+                            <th colspan="3"><font color="#FFDEAD"> {{ item.name }}</th>
+                        </tr>
+                        <tr>
+                            <td colspan="3"><font color="#FFDEAD"> Вага: {{ item.mass }} грам</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"><font color="#FFDEAD"> {{ item.price }} грн</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"><font color="#FFDEAD"> {{ item.description }}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <form action="{% url "cart:add_cart" item.id %}" method="post">
+                                    {% csrf_token %}
+                                    {{ cart_form.quantity }}
+                            </td>
+                            <td><input type="submit" class="glow-button" value="В КОШИК"></td>
+                        </tr>
+                        </form>
+
+                    </table></p>
+
+
+                {% endfor %}
+            {% endwith %}
+        {% endfor %}
+    </div>
+{% endblock %}

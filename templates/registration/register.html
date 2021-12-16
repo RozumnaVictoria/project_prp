@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+    <title>Вхід</title>
+{% endblock %}
+
+{% block background %}
+    <div class="banner" id="p"><img src="{% static 'img/6.jpg' %}" alt="Image"></div>
+
+{% endblock %}
+{% block content %}
+    <div align="center">
+        <br>
+        <br>
+        <form action="." method="POST">
+            {% csrf_token %}
+            <table>{{ form }}</table>
+            <br>
+            <p><input name="guruweba_example_submit" type="submit" class="sliding-button" value="Зареєструватись"/></p>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,220 @@
+body {
+    background-image: url("../img/fon.jpg");
+}
+
+div#mainpage {
+    background-color: #777777;
+    position: relative;
+    width: 900px;
+    margin: 5px auto;
+    box-shadow: 0px 0px 30px black
+}
+
+li {
+    list-style-type: none;
+}
+
+p {
+    font-family: Lobster, cursive;
+    letter-spacing: 2px;
+    color: #DCDCDC;
+    text-align: justify;
+    margin: 0px 80px 0px 80px;
+    margin-top: 0.5em; /* Отступ сверху */
+    margin-bottom: 1em;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+
+}
+
+img {
+    width: 850px;
+    height: 400px;
+    margin: 10px 25px 30px 20px;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+
+div.menu {
+    background-color: #c7cfd7;
+    height: 58px;
+}
+
+div.menu a {
+    color: white;
+    display: block;
+    text-align: center;
+
+    text-decoration: none;
+    width: 144px;
+    height: 40px;
+    float: left;
+    margin: 3px 2px 2px 3px;
+    font-size: 14pt;
+    letter-spacing: 3px;
+    font-family: arial;
+    padding: 12px 0px 0px 0px;
+
+    background: #DEB887;
+    transition-property: background;
+    transition-duration: 1s;
+    transition-timing-function: linear;
+}
+
+
+div.menu a:hover {
+
+    background: #ff7b29;
+
+}
+
+div.foto img {
+    width: 80px;
+    height: 80px;
+    margin: 50px 0px 10px 50px;
+}
+
+div.content {
+    font-family: Arial, Helvetica, Verdana, sans-serif; /* Гарнитура шрифта */
+    font-size: 100%; /* Размер текста */
+    font-weight: lighter;
+    color: #DCDCDC
+}
+
+div.cont {
+    font-family: Arial, Helvetica, Verdana, sans-serif; /* Гарнитура шрифта */
+    font-size: 100%; /* Размер текста */
+    font-weight: lighter;
+    color: #DCDCDC
+}
+
+div.table img {
+
+    width: 60px;
+    height: 60px;
+}
+
+div.content img {
+
+    width: 250px;
+    height: 250px;
+}
+
+div.cont img {
+    width: 60px;
+    height: 60px;
+}
+
+
+.floating-button {
+    text-decoration: none;
+    display: inline-block;
+    width: 140px;
+    height: 45px;
+    line-height: 45px;
+    border-radius: 45px;
+    margin: 10px 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 4px;
+    font-weight: 600;
+    color: #DEB887;
+    background: white;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
+    transition: .3s;
+}
+
+.floating-button:hover {
+    background: #FFEFD5;
+    box-shadow: 0 15px 20px rgba(46, 229, 157, .4);
+    color: white;
+    transform: translateY(-7px);
+}
+
+
+.glow-button {
+    text-decoration: none;
+    display: inline-block;
+    padding: 15px 30px;
+    margin: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 40px 40px #FFDAB9 inset, 0 0 0 0 #FFDAB9;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: white;
+    transition: .15s ease-in-out;
+}
+
+.glow-button:hover {
+    box-shadow: 0 0 10px 0 #FFDAB9 inset, 0 0 10px 4px #FFDAB9;
+    color: #FFDAB9;
+}
+
+.scale {
+    display: inline-block;
+    overflow: hidden;
+}
+
+.scale img {
+    transition: 1s;
+    display: block;
+}
+
+.scale img:hover {
+    transform: scale(1.2);
+}
+
+.scale {
+    transition: 1s;
+}
+
+.scale:hover {
+    transform: scale(1.2);
+}
+
+.sliding-button {
+    text-decoration: none;
+    color: #8B4513;
+    display: inline-block;
+    position: relative;
+    padding: 15px 30px;
+    border: 1px solid;
+    border-image: linear-gradient(180deg, #8B4513, #8B4513, #8B4513, #8B4513);
+    border-image-slice: 1;
+    margin: 10px 20px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    overflow: hidden;
+    letter-spacing: 2px;
+    transition: .8s cubic-bezier(.165, .84, .44, 1);
+}
+
+.sliding-button:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 0;
+    width: 100%;
+    z-index: -1;
+    color: white;
+    background: linear-gradient(180deg, #8B4513, #8B4513, #8B4513, #8B4513);
+    transition: .8s cubic-bezier(.165, .84, .44, 1);
+}
+
+.sliding-button:hover {
+    background: rgba(255, 255, 255, 0);
+}
+
+.sliding-button:hover:before {
+    bottom: 0%;
+    top: auto;
+    height: 100%;
+}

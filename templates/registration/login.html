@@ -1,0 +1,38 @@
+﻿{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+    <title>Вхід</title>
+{% endblock %}
+
+{% block background %}
+    <div class="banner" id="p"><img src="{% static 'img/6.jpg' %}" alt="Image"></div>
+
+{% endblock %}
+
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        <div class="content" id="m">
+            <h2><p> Вітаємо! </p></h2>
+            <h3><p>Щоб зробити замовлення на сайті увійдіть в систему.</h3>
+            </p>
+            <p>
+                {{ form }}
+
+            <p><input name="guruweba_example_submit" type="submit" class="sliding-button" value="Увійти"/></p>
+        </div>
+    </form>
+
+    <form action="{% url 'users:logout' %}" method="post">
+        {% csrf_token %}
+        <p><input name="guruweba_example_submit" type="submit" class="sliding-button" value="Вийти"/></p>
+    </form>
+
+    <form action="{% url 'users:register' %}" method="post">
+        {% csrf_token %}
+        <p><input name="guruweba_example_submit" type="submit" class="sliding-button" value="Зареєструватись"/></p>
+    </form>
+
+{% endblock %}
